@@ -1,5 +1,6 @@
 import React from "react";
 import { Rating } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie, fasakhMovie }) => {
   return (
@@ -13,6 +14,9 @@ const MovieCard = ({ movie, fasakhMovie }) => {
      
    }}>{movie.description}</p>
       <Rating name="read-only" value={movie.rating} readOnly />
+      <Link to={`/Details/${movie.id}`}>
+        <button> View Details </button>
+      </Link>
       <button className="enzel" onClick={() => fasakhMovie(movie.id)}>X</button>
     </div>
   );
